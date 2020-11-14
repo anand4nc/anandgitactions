@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testExecutions version="1">
-  <file path="/Users/sachin/mywork/anandgitactions/__tests__/filterByTerm.spec.js">
-    <testCase name="Filter function it should filter by a search term (link)" duration="3"/>
-  </file>
-</testExecutions>
