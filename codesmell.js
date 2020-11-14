@@ -5,4 +5,4 @@ const codeSmell = () => {
 	a = 4;
 }
 
-console.log(codeSmell());
+module.exports = codeSmell;
