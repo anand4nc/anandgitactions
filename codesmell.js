@@ -1,8 +1,8 @@
 const codeSmell = () => {
 	let a = 5;
 	return a;
-	
 	// doing somthing extra here
+	a = 53;
 }
 
-console.log(codeSmell());
+module.exports = codeSmell;

@@ -1,4 +1,5 @@
 const filterByTerm = require('../filterByTerm');
+const codeSmell = require('../codesmell')
 describe("Filter function", () => {
   test("it should filter by a search term (link)", () => {
     const input = [
