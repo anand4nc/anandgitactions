@@ -2,7 +2,8 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - main
+      - test-code-smell
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
