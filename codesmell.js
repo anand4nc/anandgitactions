@@ -2,7 +2,7 @@ const codeSmell = () => {
 	let a = 5;
 	return a;
 	a-9
-	dd
+	ddrr
 	// doing somthing extra here
 	a = 53
 }
