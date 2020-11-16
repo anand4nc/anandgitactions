@@ -3,7 +3,7 @@ const codeSmell = () => {
 	return a;
 	a=56
 	// doing somthing extra here
-let a = 5;
+
 }
 
 
