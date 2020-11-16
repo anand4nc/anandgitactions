@@ -3,7 +3,9 @@ const codeSmell = () => {
 	return a;
 	a-9
 	ddrr
+	sdf
 	// doing somthing extra here
 }
+
 
 module.exports = codeSmell;
