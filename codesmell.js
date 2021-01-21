@@ -5,5 +5,5 @@ const codeSmell = () => {
 }
 
 
-
+a=12;
 console.log(codeSmell());
