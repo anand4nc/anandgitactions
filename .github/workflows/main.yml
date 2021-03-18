@@ -19,6 +19,7 @@ jobs:
          node-version: 14.15.4
       - run: npm install -g sonarqube-scanner
       - run: ls
+      - run: sonar-scanner -Dsonar.host.url=https://myserver.com -Dsonar.login=019d1e2e04e 
       - run: ls /usr/local/bin
       - run: ls /opt/hostedtoolcache/node/14.15.4/x64/bin/sonar-scanner
       - run: ls -lrt /usr/local/bin/sonar-scanner
