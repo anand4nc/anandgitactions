@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
          node-version: 12.13.0
-      - run: npm install sonarqube-scanner
+      - run: npm install -g sonarqube-scanner
       - run: ls
       - run: ls /usr/local/bin
       - run: ls -lrt /usr/local/bin/sonar-scanner
