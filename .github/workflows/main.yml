@@ -16,7 +16,7 @@ jobs:
       - name: Running Application Test Cases
         uses: actions/setup-node@v1
         with:
-         node-version: 12.13.0
+         node-version: 14.15.4
       - run: npm install -g sonarqube-scanner
       - run: ls
       - run: ls /usr/local/bin
