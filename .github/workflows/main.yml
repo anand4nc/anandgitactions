@@ -20,5 +20,6 @@ jobs:
       - run: npm install -g sonarqube-scanner
       - run: ls
       - run: ls /usr/local/bin
+      - run: ls /opt/hostedtoolcache/node/14.15.4/x64/bin/sonar-scanner
       - run: ls -lrt /usr/local/bin/sonar-scanner
       
