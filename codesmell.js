@@ -1,10 +1,9 @@
 const codeSmell = () => {
 	let a = 5;
 	return a;
-
-	// doing somthing extra here
-
+		// doing somthing extra here
 }
 
 
-module.exports = codeSmell;
+a=12;
+console.log(codeSmell());
