@@ -1,0 +1,40 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Logging in to Amazon ECR..."
+      - #TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)
+      - TAG=3.1.$(echo $CODEBUILD_BUILD_NUMBER)
+      - aws --version
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 886436928631.dkr.ecr.ap-south-1.amazonaws.com
+
+      - REPOSITORY_URL=886436928631.dkr.ecr.ap-south-1.amazonaws.com/demo-repo
+   #   - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)    
+   
+   
+     
+  build:
+    commands:      
+      - docker build -t $REPOSITORY_URL:latest .
+      - docker tag $REPOSITORY_URL:latest $REPOSITORY_URL:$TAG
+     
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+      - echo Pushing the Docker image......
+      - docker push $REPOSITORY_URL:latest
+      - docker push $REPOSITORY_URL:$TAG
+      - echo Docker image has been pushed.......
+      - printf '[{"name":"agilent-api-container","imageUri":"%s"}]' $REPOSITORY_URL:$TAG > $CODEBUILD_SRC_DIR/imagedefinitions.json
+      - cat $CODEBUILD_SRC_DIR/imagedefinitions.json
+     
+
+artifacts:
+  files:
+    - '**/*'
+  secondary-artifacts:
+    artifact1:
+      base-directory: $CODEBUILD_SRC_DIR
+      files:
+        - imagedefinitions.json
