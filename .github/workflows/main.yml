@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   sonarcloud:
-    name: SonarCloud
+    name: SonarCloud_name
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
